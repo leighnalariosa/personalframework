@@ -36,7 +36,7 @@ CSS TABLE OF CONTENTS
     /* BASE COLORS */
     --color-body-background: rgb(255, 255, 255);
     --color-body-text: rgb(0 0 0 / .8);
-    --color-headings: rgb(0 0 0 / 1);
+    --color-headings: rgb(255, 255, 255);
     --color-links: rgb(51 102 204 / 1);
     --color-links-dark: rgb(255, 0, 149);
     --color-brand-color: rgb(255, 141, 232);
@@ -235,8 +235,11 @@ img {
 /* -------- PAGE STRUCTURE -------- */
 /* -------------------------------- */
 
+/* SITE HEADER */
 .site-header {
-    background-color: var(--color-header-bg);
+    width: 100%;
+    position: absolute;
+    background: none;
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -260,7 +263,7 @@ img {
 
 .site-header a {
     text-decoration: none;
-    color: var(--color-header-links)
+    color: var(--color-header-links);
 }
 
 .site-header a:hover {
@@ -290,7 +293,12 @@ section {
 
 /* HERO SECTION */
 .hero {
-    background: rgb(251, 203, 255);
+    padding-top: 8em;
+    background: rgb(97, 7, 105);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
 }
 
 /* SITE FOOTER */
@@ -339,4 +347,65 @@ section {
     font-weight: normal;
     color: var(--color-accent-color);
     margin: 0;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    animation-name: my-fade-in;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes my-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.my-fade-and-slide-in-from-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation-name: my-fade-and-slide-in-from-left;
+    animation-duration: .7s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes my-fade-and-slide-in-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.my-fade-and-slide-in-from-bottom {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation-name: my-fade-and-slide-in-from-bottom;
+    animation-duration: .7s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes my-fade-and-slide-in-from-bottom {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
