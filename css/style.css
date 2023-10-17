@@ -274,11 +274,6 @@ img {
 }
 
 /* SITE NAV */
-.site-header .site-nav .menu-button {
-    position: relative;
-    z-index: 200;
-}
-
 .site-header .site-nav ul {
     display: flex;
     flex-direction: column;
@@ -305,6 +300,18 @@ img {
 .site-header .site-nav[data-navstate="open"] ul {
     transform: translateX(0);
     transition: all .3s ease-out;
+}
+
+/* SITE NAV MENU BUTTON */
+.site-header .site-nav .menu-button {
+    position: absolute;
+    top: 2em;
+    bottom: 2em;
+    z-index: 200;
+}
+
+.site-header .site-nav[data-navstate="open"] .menu-button {
+    position: fixed;
 }
 
 .site-header .site-nav a {
